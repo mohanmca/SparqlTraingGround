@@ -1,5 +1,9 @@
 Dr Noureddin Sadawai
 http://people.brunel.ac.uk/~csstnns/tutorials.html
 
+OCaml tutorial
+https://www.youtube.com/watch?v=Gi58t_pgfJY&list=PLea0WJq13cnCef-3KSU3qWFge9OGUlKx1
+
+
 Machine Learning
 https://www.youtube.com/playlist?list=PLE6Wd9FR--Ecf_5nCbnSQMHqORpiChfJf
