@@ -1,0 +1,10 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+ 
+SELECT ?homepage
+FROM NAMED <http://example.org/joe>
+ 
+WHERE {
+	GRAPH <http://example.org/joe> {
+		?person foaf:homepage ?homepage .
+	}
+}

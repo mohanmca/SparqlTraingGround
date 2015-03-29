@@ -28,6 +28,7 @@ fuseki-server --update --mem /ds
 
 http://localhost:3030/
 
+Modified file from the book examples are checked in inside resources/delta project
 --------------
 Sparql
 
@@ -85,7 +86,9 @@ arq  --data ex040.ttl --query ex167.rq (Qeurying remote Sparql EndPoint)
 arq  --data ex069.ttl --data ex122.ttl --query ex123.rq (Qeurying remote Sparql EndPoint)
 arq  --query ex123.rq (Qeurying from 'default graph', or multiple dataset combined into default graph internally)
  
-
+arq  --query ex126.rq	(Named query graph)
+arq  --query m_ex126.rq	(Multiple Named Graph)
+arq  --query m_ex127.rq	(Multiple Named Graph, and Default graph in single query)
 
  
 --------------
@@ -398,6 +401,7 @@ and naming them with URI provides useful additional functionality.
 
 A set of Named grphas is collection of RDF graphs, Each one is named with a URI REF
 
+It is also used to get source or provenance of the data.
 ---
 
 
@@ -417,11 +421,54 @@ SELECT ?homepage
 FROM NAMED <http://example.org/joe>
  
 WHERE {
-	GRAPH ?g {
+	GRAPH <http://example.org/joe> {
 		?person foaf:homepage ?homepage .
 		?person foaf:mbox <mailto:joe@example.org> .
 	}
 }
 
+or
+
+GRAPHY ?g (for any graph, chooses all the grpah)
+
 ---------------
+
+SELET ?lname ?courseName
+FROM <ex069.ttll>
+FROM NAMED <ex125.ttl>
+FROM NAMED <ex122.ttl>
+WHERE {
+	{?student ab:lastName  ?lname  }
+	UNION
+	{ GRAPH <ex125.ttl> 
+		{
+		?course ab:courseTitle ?courseName .
+		}
+	}	
+}
+
+--
+#filename m_ex126.rq
+
+PREFIX ab: <http://learningsparql.com/ns/addressbook#> 
+
+SELET ?lname ?courseName
+FROM <ex069.ttll>
+FROM NAMED <http://learningsparql.com/2ndeditionexamples/ex125.ttl>
+FROM NAMED <ex122.ttl>
+WHERE {
+	{?student ab:lastName  ?lname  }
+	UNION
+	{ GRAPH <http://learningsparql.com/2ndeditionexamples/ex125.ttl> 
+		{
+		?course ab:courseTitle ?courseName .
+		}
+	}	
+}
+
+
+
+---------------
+
+
 

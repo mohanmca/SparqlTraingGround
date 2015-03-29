@@ -1,0 +1,15 @@
+PREFIX ab: <http://learningsparql.com/ns/addressbook#> 
+
+SELECT ?lname ?courseName
+FROM NAMED <ex069.ttl>
+FROM <ex125.ttl>
+FROM NAMED <ex122.ttl>
+WHERE {
+	{?course ab:courseTitle ?courseName}
+	UNION
+	{ GRAPH ?g 
+		{
+			?student ab:lastName  ?lname  
+		}
+	}	
+}
