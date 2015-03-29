@@ -60,4 +60,9 @@ In Object oriented terms, Musician object should have property of playsInstrumen
 in RDF, OWL, it is not like that, rather it is similar to Scala Traits.
 			 An object that has palyInstrument propery is Musician object.
 
+The ability of RDF resources to become member of classes based on their data values has 
+made semantic web technology popular in Areas such as medical research and intelligence agencies
+
 ---------------
+
+
