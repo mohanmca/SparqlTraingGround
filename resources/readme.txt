@@ -359,6 +359,17 @@ WHERE
      e:date ?date ;
      e:amount ?amount .
 }
+------------
+
+PREFIX  dc:  <http://purl.org/dc/elements/1.1/>
+SELECT  ?title
+WHERE   { ?x dc:title ?title
+          FILTER regex(?title, "^SPARQL") 
+        }
+        
+Query result
+<<title>>
+"SPARQL Tutorial"
 
 ------------
 

@@ -1,0 +1,5 @@
+# total number of triples
+SELECT (COUNT(*) AS ?no) { ?s ?p ?o  }
+
+#total number of entities
+SELECT COUNT(distinct ?s) AS ?no { ?s a []  }
