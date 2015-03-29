@@ -80,6 +80,12 @@ arq --data ex040.ttl --data ex041.ttl (Compare 40 and 41 for differences for bla
 arq --data ex041.ttl --query ex088.rq (No query, sample blank node, grouping attributes)
 arq  --query ex088_mine.rq	(Querying remote Dataset, where ttl is located in some URL)
 
+arq  --data ex040.ttl --query ex167.rq (Qeurying remote Sparql EndPoint)
+
+arq  --data ex069.ttl --data ex122.ttl --query ex123.rq (Qeurying remote Sparql EndPoint)
+arq  --query ex123.rq (Qeurying from 'default graph', or multiple dataset combined into default graph internally)
+ 
+
 
  
 --------------
@@ -369,10 +375,53 @@ WHERE
 
 OR
 
-From could be relative path.
+From describes dataset, could be relative path to ttl, could be absolute path or URL to ttl file.
 
 FROM <http://learningsparql.com/2ndeditionexamples/ex041.ttl>
 FROM <ex041.ttl>	-- Current directory
 FROM </cygdrive/c/Mohan/LearningSPARQLExamples/ex041.ttl>	-- Current directory
 
 ------------
+***GOTCHA***
+
+Dataset not specified in query nor provided on command line.
+
+Above error appears when query remote sparql endpoint. It could be bug in ARQ tool.
+We could overcome by specifying local ttl file as --data argument, that ARQ would use, but still queries remote endpoint
+
+------------
+Named graphs (multiple graphs, opposite of default graph) are conveient mechanism to "partioning" a RDF triple data store
+(Storing many independent but possibly related graphs in it)
+
+Named graphs are idea to handle multiple RDF graph in single document/repoistory
+and naming them with URI provides useful additional functionality.
+
+A set of Named grphas is collection of RDF graphs, Each one is named with a URI REF
+
+---
+
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+ 
+<http://example.org/joe#me> a foaf:Person .
+<http://example.org/joe#me> foaf:homepage <http://example.org/joe/index.html> .
+<http://example.org/joe#me> foaf:mbox <mailto:joe@example.org> .
+<http://example.org/joe#me> foaf:name "Joe Lambda" .
+
+---
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+ 
+SELECT ?homepage
+ 
+FROM NAMED <http://example.org/joe>
+ 
+WHERE {
+	GRAPH ?g {
+		?person foaf:homepage ?homepage .
+		?person foaf:mbox <mailto:joe@example.org> .
+	}
+}
+
+---------------
+
