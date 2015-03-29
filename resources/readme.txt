@@ -14,6 +14,10 @@ They are also stored as collections of triples, relationship in schema defined a
 
 -----------------
 
+https://code.google.com/p/void-impl/wiki/SPARQLQueriesForStatistics
+
+-----------------
+
 
 Download 
 http://mirror.nus.edu.sg/apache/jena/binaries/apache-jena-2.13.0.zip
