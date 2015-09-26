@@ -1,0 +1,53 @@
+No CPUParser for this platform - looking for class: [org.apache.system.Windows8.1]
+
+BlazeGraph(TM) Graph Engine
+
+                   Flexible
+                   Reliable
+                  Affordable
+      Web-Scale Computing for the Enterprise
+
+Copyright SYSTAP, LLC 2006-2015.  All rights reserved.
+
+Nikias
+Sat Sep 26 09:52:36 SGT 2015
+Windows 8.1/6.3 amd64
+amd64 Family n, Model n, Stepping n, Undeterminable #CPU=1
+Oracle Corporation 1.7.0_79
+freeMemory=119704328
+buildVersion=1.5.2
+
+Dependency         License                                                        
+ICU                http://source.icu-project.org/repos/icu/icu/trunk/license.html 
+bigdata-ganglia    http://www.apache.org/licenses/LICENSE-2.0.html                
+blueprints-core    https://github.com/tinkerpop/blueprints/blob/master/LICENSE.txt
+colt               http://acs.lbl.gov/software/colt/license.html                  
+commons-codec      http://www.apache.org/licenses/LICENSE-2.0.html                
+commons-fileupload http://www.apache.org/licenses/LICENSE-2.0.html                
+commons-io         http://www.apache.org/licenses/LICENSE-2.0.html                
+commons-logging    http://www.apache.org/licenses/LICENSE-2.0.html                
+dsiutils           http://www.gnu.org/licenses/lgpl-2.1.html                      
+fastutil           http://www.apache.org/licenses/LICENSE-2.0.html                
+flot               http://www.opensource.org/licenses/mit-license.php             
+high-scale-lib     http://creativecommons.org/licenses/publicdomain               
+httpclient         http://www.apache.org/licenses/LICENSE-2.0.html                
+httpclient-cache   http://www.apache.org/licenses/LICENSE-2.0.html                
+httpcore           http://www.apache.org/licenses/LICENSE-2.0.html                
+httpmime           http://www.apache.org/licenses/LICENSE-2.0.html                
+jackson-core       http://www.apache.org/licenses/LICENSE-2.0.html                
+jetty              http://www.apache.org/licenses/LICENSE-2.0.html                
+jquery             https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt   
+log4j              http://www.apache.org/licenses/LICENSE-2.0.html                
+lucene             http://www.apache.org/licenses/LICENSE-2.0.html                
+nanohttp           http://elonen.iki.fi/code/nanohttpd/#license                   
+rexster-core       https://github.com/tinkerpop/rexster/blob/master/LICENSE.txt   
+river              http://www.apache.org/licenses/LICENSE-2.0.html                
+servlet-api        http://www.apache.org/licenses/LICENSE-2.0.html                
+sesame             http://www.openrdf.org/download.jsp                            
+slf4j              http://www.slf4j.org/license.html                              
+zookeeper          http://www.apache.org/licenses/LICENSE-2.0.html                
+
+INFO: com.bigdata.util.config.LogUtil: Configure: file:/C:/Users/mohan/git/SparqlTraingGround/target/classes/log4j.properties
+New service class org.openrdf.query.resultio.sparqljson.SPARQLResultsJSONWriterFactory replaces existing service class com.bigdata.rdf.rio.json.BigdataSPARQLResultsJSONWriterFactory
+New service class org.openrdf.query.resultio.sparqljson.SPARQLResultsJSONParserFactory replaces existing service class com.bigdata.rdf.rio.json.BigdataSPARQLResultsJSONParserFactory
+[p=http://blazegraph.com/says;o="hello"]
